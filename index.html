@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project i | 實驗性行動裝置設計工作室</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- 引入 GSAP 動畫核心庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Space Grotesk', 'Noto Sans TC', sans-serif;
+            background-color: #050505;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .experimental-grid {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="experimental-grid">
+
+    <!-- 導覽列 -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-tighter text-white">PROJECT i<span class="text-red-500">.</span> LAB</div>
+        <nav class="hidden md:flex gap-8 text-sm text-gray-400">
+            <a href="#latest-model" class="hover:text-white transition">最新機型發表</a>
+            <a href="#services" class="hover:text-white transition">工作室服務</a>
+            <a href="#works" class="hover:text-white transition">作品分類</a>
+            <a href="#casestudy" class="hover:text-white transition">案例研究</a>
+            <a href="#team" class="hover:text-white transition">團隊介紹</a>
+        </nav>
+        <a href="#contact" class="border border-white/20 px-4 py-2 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition">聯絡我們</a>
+    </header>
+
+    <!-- 首頁 Hero 區塊 -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative">
+        <div class="hero-content max-w-4xl">
+            <span class="inline-block text-xs uppercase tracking-widest text-red-500 border border-red-500/30 px-3 py-1 mb-6">Experimental Phone Architecture Studio</span>
+            <h1 class="text-5xl md:text-8xl font-bold tracking-tight mb-6 text-white">
+                RE-IMAGINING <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-600">THE iPHONE.</span>
+            </h1>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm md:text-base mb-10">
+                我們打破傳統手機的設計框架，透過極端美學、硬體重組與前衛數位互動，重新定義隨身裝置的感官連結。
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#latest-model" class="bg-white text-black px-8 py-3 font-medium hover:bg-gray-200 transition">探索最新機型</a>
+                <a href="#contact" class="border border-white/30 px-8 py-3 font-medium hover:bg-white/10 transition">預約諮詢</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 新增：最新機型介紹專區 (參照 Apple 官方風格與最新旗艦特色) -->
+    <section id="latest-model" class="py-24 px-6 md:px-20 border-t border-white/10 bg-neutral-950">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-xs uppercase tracking-widest text-red-500 mb-2">Spotlight / 最新旗艦發表</h2>
+                    <h3 class="text-3xl md:text-5xl font-bold">iPhone 18 Pro 實驗訂製版</h3>
+                </div>
+                <span class="hidden md:block text-xs text-gray-500 font-mono">DESIGNED BY PROJECT i LAB</span>
+            </div>
+
+            <!-- 大圖展示 -->
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 mb-12 group">
+                <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1600&q=80" alt="iPhone 18 Pro 實驗訂製版" class="w-full h-[450px] md:h-[600px] object-cover group-hover:scale-105 transition duration-700 opacity-85">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <div class="absolute bottom-8 left-8">
+                    <span class="text-xs text-red-500 font-mono uppercase tracking-widest">Titanium & Carbon Architecture</span>
+                    <h4 class="text-2xl md:text-3xl font-bold text-white mt-1">鈦金屬極致工藝，結合突破性光學系統</h4>
+                </div>
+            </div>
+
+            <!-- 機型特色規格 3 格卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="model-spec border border-white/10 p-8 bg-neutral-900/50">
+                    <div class="text-red-500 text-xl font-bold mb-3">A19 Pro 晶片</div>
+                    <h4 class="text-lg font-bold mb-2">極致運算效能</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">提供前所未有的繪圖處理速度與專屬 AI 晶片架構，完美支援實驗性互動應用。</p>
+                </div>
+                <div class="model-spec border border-white/10 p-8 bg-neutral-900/50">
+                    <div class="text-red-500 text-xl font-bold mb-3">Pro 攝錄系統</div>
+                    <h4 class="text-lg font-bold mb-2">突破性光學捕捉</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">搭載歷來最大感光元件與自訂鏡頭模組，在極低光源下也能呈現電影級細節。</p>
+                </div>
+                <div class="model-spec border border-white/10 p-8 bg-neutral-900/50">
+                    <div class="text-red-500 text-xl font-bold mb-3">輕量化結構</div>
+                    <h4 class="text-lg font-bold mb-2">航太級鈦金屬</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">重新打造的外框比例，兼具無與倫比的堅固性與令人驚艷的羽量級手感。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作室核心服務 Services -->
+    <section id="services" class="py-24 px-6 md:px-20 border-t border-white/10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">01 / Services</h2>
+            <h3 class="text-3xl md:text-5xl font-bold mb-16">工作室核心服務</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card border border-white/10 p-8 bg-black/40 hover:border-red-500/50 transition">
+                    <div class="text-red-500 text-xl font-bold mb-4">01</div>
+                    <h4 class="text-xl font-bold mb-3">硬體美學改造</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">挑戰模組化與透明機身極限，為追求獨特品味的使用者量身打造外觀工藝。</p>
+                </div>
+                <div class="service-card border border-white/10 p-8 bg-black/40 hover:border-red-500/50 transition">
+                    <div class="text-red-500 text-xl font-bold mb-4">02</div>
+                    <h4 class="text-xl font-bold mb-3">實驗性介面設計 (UI/UX)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">捨棄千篇一律的網格，打造具備動態反饋、非線性導覽的未來感數位操作介面。</p>
+                </div>
+                <div class="service-card border border-white/10 p-8 bg-black/40 hover:border-red-500/50 transition">
+                    <div class="text-red-500 text-xl font-bold mb-4">03</div>
+                    <h4 class="text-xl font-bold mb-3">未來品牌重塑</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">結合科技與當代藝術，協助高階品牌建立具有實驗精神的視覺識別。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品分類 Works -->
+    <section id="works" class="py-24 px-6 md:px-20 border-t border-white/10 bg-neutral-950">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">02 / Works Gallery</h2>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+                <h3 class="text-3xl md:text-5xl font-bold">精選實驗案例</h3>
+                <div class="flex gap-4 mt-6 md:mt-0 text-sm">
+                    <button class="filter-btn text-white border-b border-white pb-1" onclick="filterWorks('all')">全部</button>
+                    <button class="filter-btn text-gray-500 hover:text-white pb-1" onclick="filterWorks('concept')">概念手機</button>
+                    <button class="filter-btn text-gray-500 hover:text-white pb-1" onclick="filterWorks('ui')">介面互動</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="work-card group relative overflow-hidden border border-white/10 bg-neutral-900 cursor-pointer p-8" data-category="concept">
+                    <span class="text-xs text-red-500 uppercase tracking-widest">Concept Hardware</span>
+                    <h4 class="text-2xl font-bold mt-1 group-hover:text-red-400 transition">Project Zero: 透明化極致架構</h4>
+                    <p class="text-gray-400 text-sm mt-2">探索手機內部零件重組的極端美學，讓電路與光學模組成為新世代的裝飾主義。</p>
+                </div>
+                <div class="work-card group relative overflow-hidden border border-white/10 bg-neutral-900 cursor-pointer p-8" data-category="ui">
+                    <span class="text-xs text-red-500 uppercase tracking-widest">Digital UI/UX</span>
+                    <h4 class="text-2xl font-bold mt-1 group-hover:text-red-400 transition">Chrono OS: 非線性時間介面</h4>
+                    <p class="text-gray-400 text-sm mt-2">打破傳統桌面的應用程式圖示排列，改以動態時間軸與沈浸式空間手勢進行互動。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例研究 Case Study -->
+    <section id="casestudy" class="py-24 px-6 md:px-20 border-t border-white/10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">03 / Case Study 深度解析</h2>
+            <h3 class="text-3xl font-bold mb-12">PROJECT ZERO 幕後設計解構</h3>
+            <div class="space-y-16 border-l border-white/20 pl-6 md:pl-10">
+                <div>
+                    <span class="text-red-500 font-mono text-sm">01 / BACKGROUND</span>
+                    <h4 class="text-xl font-bold mt-1 mb-2">當智慧型手機外觀陷入僵化</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">在當前市場千篇一律的玻璃與金屬方塊中，使用者對於「個性化科技」的渴望達到歷史新高。</p>
+                </div>
+                <div>
+                    <span class="text-red-500 font-mono text-sm">02 / CHALLENGE & STRATEGY</span>
+                    <h4 class="text-xl font-bold mt-1 mb-2">如何在極簡結構中容納強大機能</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">我們採用了航太級碳纖維骨架與雙面錯位排版策略，將傳統隱藏在內部的精密元件轉化為外顯的幾何藝術。</p>
+                </div>
+                <div>
+                    <span class="text-red-500 font-mono text-sm">03 / RESULT</span>
+                    <h4 class="text-xl font-bold mt-1 mb-2">定義未來的行動裝置新標準</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">作品公開後獲得全球前衛設計大獎肯定，並成功引起所有想買手機的前瞻消費者熱烈討論。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 團隊介紹 Team -->
+    <section id="team" class="py-24 px-6 md:px-20 border-t border-white/10 bg-neutral-950">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">04 / Team</h2>
+            <h3 class="text-3xl font-bold mb-12">核心主創團隊</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border border-white/10 p-8">
+                    <h4 class="text-xl font-bold">Kaelen Voss</h4>
+                    <p class="text-red-500 text-sm mb-2">Chief Experimental Officer</p>
+                    <p class="text-gray-400 text-sm">前前衛介面研究員，致力於將不合理的硬體結構化為現實。</p>
+                </div>
+                <div class="border border-white/10 p-8">
+                    <h4 class="text-xl font-bold">Aria Sterling</h4>
+                    <p class="text-red-500 text-sm mb-2">Lead Interaction Designer</p>
+                    <p class="text-gray-400 text-sm">專注於動態與非線性視覺敘事，打破螢幕邊界的藩籬。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡表單 Contact -->
+    <section id="contact" class="py-24 px-6 md:px-20 border-t border-white/10">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4">05 / Contact</h2>
+            <h3 class="text-3xl font-bold mb-8">預約最新機型訂製或專案合作</h3>
+            <form onsubmit="handleSubmit(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">您的稱呼</label>
+                    <input type="text" required class="w-full bg-neutral-900 border border-white/10 px-4 py-3 text-white focus:border-red-500 outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">電子郵件</label>
+                    <input type="email" required class="w-full bg-neutral-900 border border-white/10 px-4 py-3 text-white focus:border-red-500 outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">需求說明（例如：iPhone 18 Pro 訂製 / 服務諮詢）</label>
+                    <textarea rows="4" required class="w-full bg-neutral-900 border border-white/10 px-4 py-3 text-white focus:border-red-500 outline-none transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-white text-black font-bold py-3 uppercase tracking-widest hover:bg-gray-200 transition">送出需求</button>
+                <div id="form-msg" class="text-center text-red-500 text-sm mt-4 hidden">訊息已成功發送，我們將盡快與您聯繫！</div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="py-8 text-center border-t border-white/10 text-xs text-gray-600">
+        &copy; 2026 Project i. LAB. All Rights Reserved.
+    </footer>
+
+    <!-- GSAP 動畫與互動邏輯 -->
+    <script>
+        // 1. 首頁進場動畫
+        gsap.from(".hero-content > *", {
+            duration: 1.2,
+            y: 40,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        // 2. 服務與最新機型卡片捲動觸發
+        gsap.utils.toArray(".service-card, .model-spec").forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                },
+                duration: 0.8,
+                y: 40,
+                opacity: 0,
+                delay: i * 0.1,
+                ease: "power2.out"
+            });
+        });
+
+        // 3. 作品分類切換互動
+        function filterWorks(category) {
+            const cards = document.querySelectorAll('.work-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    gsap.to(card, { duration: 0.4, opacity: 1, scale: 1, display: 'block' });
+                } else {
+                    gsap.to(card, { duration: 0.4, opacity: 0, scale: 0.95, display: 'none' });
+                }
+            });
+        }
+
+        // 4. 表單送出互動回饋
+        function handleSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-msg');
+            msg.classList.remove('hidden');
+            gsap.from(msg, { duration: 0.5, y: 10, opacity: 0 });
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
